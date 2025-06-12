@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog Produk Monggo</title>
+    <title>Monggo Beli Disini</title>
     
     <!-- Impor Font dari Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -234,7 +234,7 @@
               { id: 6, name: 'Mechanical Keyboard K8 Pro', category: 'Aksesoris', description: 'Keyboard mekanikal nirkabel dengan layout TKL.', price: 1650000, images: ['https://placehold.co/600x600/1e1e1e/ffffff?text=Keyboard+Atas', 'https://placehold.co/600x600/1e1e1e/ffffff?text=Detail+Switch'], videoYoutubeId: 'kUy31G36d24' }
             ];
             let cart = []; let currentView = 'catalog'; let historyStack = ['catalog']; let lastOrderDetails = null; let appliedDiscount = 0;
-            const availableVouchers = [ { code: 'MONGGOHEMAT', value: 25000 }, { code: 'DISKONBARU', value: 10000 } ];
+            const availableVouchers = [ { code: 'MONGGOHEMAT', value: 25000 }];
             const modalOverlay = document.getElementById('modal-overlay'); const paymentModal = document.getElementById('payment-modal'); const closeModalBtn = document.getElementById('close-modal-btn'); const modalTotalAmount = document.getElementById('modal-total-amount'); const qrisCodeImg = document.getElementById('payment-qris-code');
             const views = { catalog: document.getElementById('catalog-view'), productDetail: document.getElementById('product-detail-view'), cart: document.getElementById('cart-view'), checkout: document.getElementById('checkout-view'), tracking: document.getElementById('tracking-view') };
             const productGrid = document.getElementById('product-grid'); const searchInput = document.getElementById('search-input'); const cartItemCount = document.getElementById('cart-item-count'); const backButton = document.getElementById('back-button'); const cartButton = document.getElementById('cart-button'); const brandLogo = document.getElementById('brand-logo'); const trackOrderBtn = document.getElementById('track-order-btn');
@@ -270,7 +270,7 @@
                     orderSummaryText += `Saya sudah melakukan pembayaran. Mohon pesanan segera diproses. Terima kasih.`;
                     alert(`Pembayaran Berhasil!\n\nSimpan Nomor Resi Anda: ${lastOrderDetails.trackingNumber}\n\nAnda akan diarahkan ke WhatsApp untuk mengirim konfirmasi.`);
                 }
-                const whatsappUrl = `https://wa.me/6285179848497?text=${encodeURIComponent(orderSummaryText)}`;
+                const whatsappUrl = `https://wa.me/6281211862924?text=${encodeURIComponent(orderSummaryText)}`;
                 document.getElementById('checkout-form').reset(); cart = []; appliedDiscount = 0; updateCartCount();
                 window.location.href = whatsappUrl; historyStack = ['catalog']; switchView('catalog');
             };
