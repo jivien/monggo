@@ -32,7 +32,6 @@
         .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-secondary); background-color: var(--bg-medium); border-radius: var(--border-radius); }
         .empty-state button { margin-top: 1rem; }
         .view-title { font-size: 1.75rem; font-weight: bold; margin-bottom: 1.5rem; }
-        
         #app-header { position: sticky; top: 0; z-index: 50; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color); overflow: hidden; }
         #header-video-bg { position: absolute; top: 50%; left: 50%; width: auto; height: auto; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); z-index: -2; opacity: 0.3; }
         #header-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px); z-index: -1; }
@@ -44,11 +43,9 @@
         #search-input { width: 100%; background-color: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 0.6rem 0.75rem 0.6rem 2.5rem; color: var(--text-primary); font-size: 1rem; transition: border-color 0.2s; }
         #search-input:focus { outline: none; border-color: var(--accent); }
         .cart-badge { position: absolute; top: 0px; right: 0px; background-color: var(--danger); color: white; font-size: 0.7rem; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-        
         .category-filters { display: flex; gap: 0.75rem; margin-bottom: 2rem; overflow-x: auto; padding-bottom: 0.5rem; }
         .category-btn { background-color: var(--bg-light); color: var(--text-secondary); border: none; padding: 0.5rem 1rem; border-radius: var(--border-radius); cursor: pointer; font-weight: 600; white-space: nowrap; transition: all 0.2s; }
         .category-btn.active { background-color: var(--accent-dark); color: var(--text-primary); }
-        
         #app-main { padding-top: 1.5rem; padding-bottom: 5rem; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1.25rem; }
         .product-card { background-color: var(--bg-medium); border-radius: var(--border-radius); overflow: hidden; cursor: pointer; transition: transform 0.2s ease-out, box-shadow 0.2s; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
@@ -138,7 +135,7 @@
         </video>
         <div class="container">
             <h1 id="brand-logo">Monggo</h1>
-            <div class="search-container"><i data-lucide="search" class="search-icon"></i><input type="text" id="search-input" placeholder="Cari di Katalog Monggo..."></div>
+            <div class="search-container"><i data-lucide="search" class="search-icon"></i><input type="text" id="search-input" placeholder="Cari produk..."></div>
             <div id="header-nav">
                 <button id="track-order-btn" class="icon-button" title="Lacak Pesanan"><i data-lucide="truck"></i></button>
                 <button id="cart-button" class="icon-button" title="Keranjang"><i data-lucide="shopping-cart"></i><span id="cart-item-count" class="cart-badge" style="display: none;">0</span></button>
@@ -147,11 +144,7 @@
     </header>
     
     <main id="app-main" class="container">
-        <div id="catalog-view">
-            <div id="category-filters" class="category-filters"></div>
-            <div id="product-grid" class="product-grid"></div>
-            <p id="no-products-message" class="empty-state" style="display: none;">Produk tidak ditemukan.</p>
-        </div>
+        <div id="catalog-view"><div id="category-filters" class="category-filters"></div><div id="product-grid"></div><p id="no-products-message" class="empty-state" style="display: none;">Produk tidak ditemukan.</p></div>
         <div id="product-detail-view" style="display: none;"></div>
         <div id="cart-view" style="display: none;"><h2 class="view-title">Keranjang Belanja</h2><div class="cart-items-container-wrapper"><div id="cart-items-container"></div><div id="cart-empty-message" class="empty-state" style="display: none;"><p>Keranjang Anda masih kosong.</p><button id="start-shopping-button" class="btn btn-primary">Mulai Belanja</button></div><div id="cart-summary" style="display: none;"><div class="cart-total"><span>Total Belanja:</span><span id="cart-total-price"></span></div><button id="checkout-button" class="btn btn-primary btn-full">Lanjut ke Checkout</button></div></div></div>
         <div id="checkout-view" style="display: none;">
@@ -206,7 +199,7 @@
                  </form>
              </div>
         </div>
-        <div id="tracking-view" style="display: none;"><h2 class="view-title">Lacak Pesanan Anda</h2><div class="form-section"><p style="color: var(--text-secondary); margin-bottom: 1rem;">Masukkan nomor resi yang Anda terima setelah pembayaran untuk melihat status pengiriman.</p><form id="tracking-form"><div class="input-group"><i data-lucide="search"></i><input type="text" id="tracking-input" placeholder="Contoh: JNE-171822..." required></div><button type="submit" class="btn btn-primary btn-full">Lacak</button></form><div id="tracking-result-container" style="display: none;"></div></div></div>
+        <div id="tracking-view" style="display: none;"><h2 class="view-title">Lacak Pesanan Anda</h2><div class="form-section"><p style="color: var(--text-secondary); margin-bottom: 1rem;">Masukkan nomor resi yang Anda terima setelah pembayaran untuk melihat status pengiriman.</p><form id="tracking-form"><div class="input-group"><i data-lucide="search"></i><input type="text" id="tracking-input" placeholder="Contoh: JNE-..." required></div><button type="submit" class="btn btn-primary btn-full">Lacak</button></form><div id="tracking-result-container" style="display: none;"></div></div></div>
     </main>
 
     <a href="https://wa.me/6285179848497?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Anda" class="fab" title="Hubungi via WhatsApp" target="_blank" rel="noopener noreferrer"><i data-lucide="message-circle"></i></a>
@@ -223,7 +216,6 @@
         <ol class="payment-instructions">
             <li>Buka aplikasi pembayaran Anda.</li>
             <li>Pilih menu 'Bayar' atau 'Scan QRIS'.</li>
-            <li>Scan QR Code di atas.</li>
             <li>Pastikan nama Merchant dan nominal pembayaran sudah sesuai.</li>
             <li>Selesaikan pembayaran.</li>
         </ol>
@@ -249,54 +241,21 @@
             const shippingMethodSelect = document.getElementById('shipping-method'); const couponInput = document.getElementById('coupon-code'); const applyCouponBtn = document.getElementById('apply-coupon-btn'); const categoryFiltersContainer = document.getElementById('category-filters');
             const formatCurrency = (number) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(number);
 
-            const renderCategories = () => {
-                const categories = ['Semua', ...new Set(products.map(p => p.category))];
-                categoryFiltersContainer.innerHTML = '';
-                categories.forEach(category => {
-                    const btn = document.createElement('button');
-                    btn.className = 'category-btn';
-                    btn.textContent = category;
-                    btn.dataset.category = category;
-                    if (category === 'Semua') {
-                        btn.classList.add('active');
-                    }
-                    btn.addEventListener('click', () => {
-                        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-                        const filteredProducts = category === 'Semua' ? products : products.filter(p => p.category === category);
-                        renderCatalog(filteredProducts);
-                    });
-                    categoryFiltersContainer.appendChild(btn);
-                });
-            };
+            const renderCategories = () => { const categories = ['Semua', ...new Set(products.map(p => p.category))]; categoryFiltersContainer.innerHTML = ''; categories.forEach(category => { const btn = document.createElement('button'); btn.className = 'category-btn'; btn.textContent = category; btn.dataset.category = category; if (category === 'Semua') { btn.classList.add('active'); } btn.addEventListener('click', () => { document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); const query = searchInput.value.toLowerCase(); let filteredProducts = category === 'Semua' ? products : products.filter(p => p.category === category); if (query) { filteredProducts = filteredProducts.filter(p => p.name.toLowerCase().includes(query)); } renderCatalog(filteredProducts); }); categoryFiltersContainer.appendChild(btn); }); };
             const renderVoucherHints = () => { const hintContainer = document.getElementById('voucher-hint-container'); hintContainer.innerHTML = ''; availableVouchers.forEach(voucher => { const hint = document.createElement('div'); hint.className = 'voucher-hint'; hint.textContent = voucher.code; hint.title = `Klik untuk pakai voucher potongan ${formatCurrency(voucher.value)}`; hint.addEventListener('click', () => { couponInput.value = voucher.code; applyCouponBtn.click(); }); hintContainer.appendChild(hint); }); };
             const renderCatalog = (productsToRender) => { const productList = productsToRender || products; productGrid.innerHTML = ''; document.getElementById('no-products-message').style.display = productList.length === 0 ? 'block' : 'none'; productList.forEach(product => { const card = document.createElement('div'); card.className = 'product-card'; card.dataset.productId = product.id; card.innerHTML = `<img src="${product.images[0]}" alt="${product.name}" onerror="this.onerror=null;this.src='https://placehold.co/300x300/1e293b/ffffff?text=Error';"><div class="product-card-info"><h3>${product.name}</h3><p>${formatCurrency(product.price)}</p></div>`; card.addEventListener('click', () => { renderProductDetail(product.id); switchView('productDetail'); }); productGrid.appendChild(card); }); };
             const renderProductDetail = (productId) => { const product = products.find(p => p.id === productId); if (!product) return; let thumbnailHTML = product.images.map((img, index) => `<img src="${img}" class="thumbnail ${index === 0 ? 'active' : ''}" data-index="${index}" alt="thumbnail ${index + 1}" onerror="this.onerror=null;this.style.display='none';">`).join(''); if (product.videoYoutubeId) { thumbnailHTML += `<div class="video-thumbnail" data-video-id="${product.videoYoutubeId}"><i data-lucide="video"></i></div>`; } views.productDetail.innerHTML = `<div class="detail-container"><div class="detail-gallery"><div class="detail-main-media"></div><div class="detail-thumbnails">${thumbnailHTML}</div></div><div class="detail-info"><h2>${product.name}</h2><p class="price">${formatCurrency(product.price)}</p><p class="description">${product.description}</p><button class="btn btn-primary btn-full add-to-cart-detail"><i data-lucide="shopping-cart"></i> Tambah ke Keranjang</button></div></div>`; lucide.createIcons(); let currentImageIndex = 0; const mainMediaContainer = views.productDetail.querySelector('.detail-main-media'); const updateMedia = (index, isVideo = false) => { mainMediaContainer.innerHTML = ''; views.productDetail.querySelectorAll('.thumbnail, .video-thumbnail').forEach(t => t.classList.remove('active')); if (isVideo) { mainMediaContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${product.videoYoutubeId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`; views.productDetail.querySelector('.video-thumbnail').classList.add('active'); } else { currentImageIndex = index; mainMediaContainer.innerHTML = `<img src="${product.images[index]}" alt="${product.name}" onerror="this.onerror=null;this.src='https://placehold.co/600x600/1e293b/ffffff?text=Image+Error';"><button class="gallery-nav prev"><i data-lucide="chevron-left"></i></button><button class="gallery-nav next"><i data-lucide="chevron-right"></i></button>`; views.productDetail.querySelector(`.thumbnail[data-index="${index}"]`).classList.add('active'); lucide.createIcons(); mainMediaContainer.querySelector('.prev').addEventListener('click', () => navigateGallery(-1)); mainMediaContainer.querySelector('.next').addEventListener('click', () => navigateGallery(1)); } }; const navigateGallery = (direction) => { let newIndex = (currentImageIndex + direction + product.images.length) % product.images.length; updateMedia(newIndex); }; updateMedia(0); views.productDetail.querySelectorAll('.thumbnail, .video-thumbnail').forEach(thumb => { thumb.addEventListener('click', () => { if (thumb.dataset.videoId) { updateMedia(null, true); } else { updateMedia(parseInt(thumb.dataset.index)); } }); }); views.productDetail.querySelector('.add-to-cart-detail').addEventListener('click', () => addToCart(product.id)); };
             const renderCart = () => { const wrapper = document.querySelector('#cart-view .cart-items-container-wrapper'); const container = document.getElementById('cart-items-container'); const emptyMessage = document.getElementById('cart-empty-message'); const summary = document.getElementById('cart-summary'); const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0); if (cart.length === 0) { wrapper.style.display = "block"; container.innerHTML = ''; emptyMessage.style.display = 'block'; summary.style.display = 'none'; } else { wrapper.style.display = "block"; emptyMessage.style.display = 'none'; summary.style.display = 'block'; container.innerHTML = cart.map(item => `<div class="cart-item" data-product-id="${item.id}"><img src="${item.images[0]}" alt="${item.name}" onerror="this.onerror=null;this.src='https://placehold.co/80x80/1e293b/ffffff?text=X';"><div class="cart-item-info"><p>${item.name}</p><span>${formatCurrency(item.price)}</span></div><div class="quantity-control"><button class="quantity-change" data-change="-1">-</button><span>${item.quantity}</span><button class="quantity-change" data-change="1">+</button></div><button class="remove-item icon-button" style="color: var(--danger);"><i data-lucide="trash-2"></i></button></div>`).join(''); document.getElementById('cart-total-price').textContent = formatCurrency(totalPrice); } updateCartCount(); lucide.createIcons(); };
             const updateCheckoutSummary = () => { const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0); const shippingCost = parseInt(shippingMethodSelect.value) || 0; const grandTotal = subtotal + shippingCost - appliedDiscount; document.querySelector('#summary-subtotal span:last-child').textContent = formatCurrency(subtotal); document.querySelector('#summary-shipping span:last-child').textContent = formatCurrency(shippingCost); const discountDiv = document.getElementById('summary-discount'); if (appliedDiscount > 0) { discountDiv.style.display = 'flex'; discountDiv.querySelector('span:last-child').textContent = `- ${formatCurrency(appliedDiscount)}`; } else { discountDiv.style.display = 'none'; } document.querySelector('#summary-grand-total span:last-child').textContent = formatCurrency(grandTotal > 0 ? grandTotal : 0); };
             const renderCheckout = () => { const summaryList = document.getElementById('summary-items-list'); summaryList.innerHTML = cart.map(item => `<div class="summary-item"><span class="name">${item.name} x${item.quantity}</span><span class="price">${formatCurrency(item.price * item.quantity)}</span></div>`).join(''); appliedDiscount = 0; couponInput.value = ''; renderVoucherHints(); updateCheckoutSummary(); };
-            const switchView = (viewName) => { window.scrollTo(0, 0); currentView = viewName; Object.values(views).forEach(view => view.style.display = 'none'); views[viewName].style.display = 'block'; if (viewName !== 'catalog' && historyStack[historyStack.length - 1] !== viewName) { historyStack.push(viewName); } if (viewName === 'cart') renderCart(); if (viewName === 'checkout') renderCheckout(); };
+            const switchView = (viewName) => { window.scrollTo(0, 0); currentView = viewName; Object.values(views).forEach(view => view.style.display = 'none'); views[viewName].style.display = 'block'; if (viewName !== 'catalog' && historyStack[historyStack.length - 1] !== viewName) { historyStack.push(viewName); } lucide.createIcons(); if (viewName === 'cart') renderCart(); if (viewName === 'checkout') renderCheckout(); };
             const updateCartCount = () => { const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0); cartItemCount.style.display = totalItems > 0 ? 'flex' : 'none'; cartItemCount.textContent = totalItems; };
             const addToCart = (productId) => { const product = products.find(p => p.id === productId); const existingItem = cart.find(item => item.id === productId); if (existingItem) { existingItem.quantity++; } else { cart.push({ ...product, quantity: 1 }); } alert(`"${product.name}" telah ditambahkan ke keranjang!`); updateCartCount(); };
             const updateCartQuantity = (productId, change) => { const itemIndex = cart.findIndex(i => i.id === productId); if (itemIndex > -1) { cart[itemIndex].quantity += change; if (cart[itemIndex].quantity <= 0) { cart.splice(itemIndex, 1); } } renderCart(); };
             const handleApplyCoupon = () => { const enteredCode = couponInput.value.trim().toUpperCase(); const matchedVoucher = availableVouchers.find(v => v.code === enteredCode); if (matchedVoucher) { appliedDiscount = matchedVoucher.value; alert(`Voucher berhasil dipakai! Anda mendapat potongan sebesar ${formatCurrency(appliedDiscount)}.`); } else { appliedDiscount = 0; alert('Kode voucher tidak valid.'); } updateCheckoutSummary(); };
-            const handleCheckoutSubmit = (e) => {
-                e.preventDefault(); 
-                if (cart.length === 0) { alert("Keranjang Anda kosong!"); return; }
-                const customerName = document.getElementById('customer-name').value.trim(); const customerAddress = document.getElementById('customer-address').value.trim(); const customerPhone = document.getElementById('customer-phone').value.trim();
-                const shippingCost = parseInt(shippingMethodSelect.value); const selectedOption = shippingMethodSelect.options[shippingMethodSelect.selectedIndex];
-                const shippingName = selectedOption.text; const isCod = selectedOption.dataset.cod === 'true';
-                if (!customerName || !customerAddress || !customerPhone) { alert('Harap isi semua detail alamat pengiriman.'); return; }
-                if (!shippingCost && shippingMethodSelect.value === "") { alert('Harap pilih metode pengiriman.'); return; }
-                const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0); let grandTotal = subtotal + shippingCost - appliedDiscount; if(grandTotal < 0) grandTotal = 0;
-                const trackingNumber = `${shippingName.split(' ')[0].toUpperCase()}-${Date.now()}`;
-                lastOrderDetails = { customerName, customerAddress, customerPhone, grandTotal, shippingName, trackingNumber, isCod, appliedDiscount, appliedVoucher: appliedDiscount > 0 ? couponInput.value.trim().toUpperCase() : null };
-                if (isCod) { confirmOrderAndRedirect(true); } 
-                else { modalTotalAmount.textContent = formatCurrency(grandTotal); const qrisImageUrl = 'https://i.ibb.co/6n0yW1c/qris-dana-romanzaey.png'; qrisCodeImg.src = qrisImageUrl; modalOverlay.style.display = 'block'; paymentModal.style.display = 'block'; }
-            };
+            const handleCheckoutSubmit = (e) => { e.preventDefault(); if (cart.length === 0) { alert("Keranjang Anda kosong!"); return; } const customerName = document.getElementById('customer-name').value.trim(); const customerAddress = document.getElementById('customer-address').value.trim(); const customerPhone = document.getElementById('customer-phone').value.trim(); const shippingCost = parseInt(shippingMethodSelect.value); const selectedOption = shippingMethodSelect.options[shippingMethodSelect.selectedIndex]; const shippingName = selectedOption.text; const isCod = selectedOption.dataset.cod === 'true'; if (!customerName || !customerAddress || !customerPhone) { alert('Harap isi semua detail alamat pengiriman.'); return; } if (!shippingCost && shippingMethodSelect.value === "") { alert('Harap pilih metode pengiriman.'); return; } const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0); let grandTotal = subtotal + shippingCost - appliedDiscount; if(grandTotal < 0) grandTotal = 0; const trackingNumber = `${shippingName.split(' ')[0].toUpperCase()}-${Date.now()}`; lastOrderDetails = { customerName, customerAddress, customerPhone, grandTotal, shippingName, trackingNumber, isCod, appliedDiscount, appliedVoucher: appliedDiscount > 0 ? couponInput.value.trim().toUpperCase() : null }; if (isCod) { confirmOrderAndRedirect(true); } else { modalTotalAmount.textContent = formatCurrency(grandTotal); const qrisImageUrl = 'https://i.ibb.co/6n0yW1c/qris-dana-romanzaey.png'; qrisCodeImg.src = qrisImageUrl; modalOverlay.style.display = 'block'; paymentModal.style.display = 'block'; } };
             const confirmOrderAndRedirect = (isCodOrder = false) => {
-                if (!lastOrderDetails) return;
-                modalOverlay.style.display = 'none'; paymentModal.style.display = 'none';
+                if (!lastOrderDetails) return; modalOverlay.style.display = 'none'; paymentModal.style.display = 'none';
                 let orderSummaryText = `*Konfirmasi Pesanan Baru (Resi: ${lastOrderDetails.trackingNumber})*\n\n`;
                 cart.forEach(item => { orderSummaryText += `• ${item.name} (x${item.quantity})\n`; });
                 orderSummaryText += `\n*Pengiriman:* ${lastOrderDetails.shippingName}`;
@@ -313,15 +272,22 @@
                 }
                 const whatsappUrl = `https://wa.me/6285179848497?text=${encodeURIComponent(orderSummaryText)}`;
                 document.getElementById('checkout-form').reset(); cart = []; appliedDiscount = 0; updateCartCount();
-                window.location.href = whatsappUrl;
-                historyStack = ['catalog']; switchView('catalog');
+                window.location.href = whatsappUrl; historyStack = ['catalog']; switchView('catalog');
             };
             const handleTrackingSubmit = (e) => { e.preventDefault(); const inputResi = document.getElementById('tracking-input').value.trim(); const resultContainer = document.getElementById('tracking-result-container'); if (!inputResi) { alert("Masukkan nomor resi."); return; } resultContainer.style.display = 'block'; if (lastOrderDetails && inputResi === lastOrderDetails.trackingNumber) { resultContainer.innerHTML = `<div class="tracking-result"><h3>Status Pengiriman: ${lastOrderDetails.trackingNumber}</h3><ul class="tracking-status"><li class="completed"><p class="status">Pesanan Diproses</p><p class="date">Jumat, 13 Jun 2025, 03:31</p></li><li class="completed"><p class="status">Paket Diserahkan ke Kurir (${lastOrderDetails.shippingName.split(' ')[0]})</p><p class="date">Jumat, 13 Jun 2025, 09:00</p></li><li><p class="status">Paket dalam Perjalanan</p><p class="date">Menunggu update...</p></li><li><p class="status">Paket Tiba di Kota Tujuan</p><p class="date">Menunggu update...</p></li></ul></div>`; } else { resultContainer.innerHTML = `<p class="empty-state">Nomor resi tidak ditemukan. Pastikan nomor resi sudah benar.</p>`; } };
             
-            searchInput.addEventListener('input', (e) => { const query = e.target.value.toLowerCase(); const filtered = products.filter(p => p.name.toLowerCase().includes(query)); switchView('catalog'); renderCatalog(filtered); });
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                const activeCategory = document.querySelector('.category-btn.active').dataset.category;
+                let filteredProducts = activeCategory === 'Semua' ? products : products.filter(p => p.category === activeCategory);
+                if (query) {
+                    filteredProducts = filteredProducts.filter(p => p.name.toLowerCase().includes(query));
+                }
+                renderCatalog(filteredProducts);
+            });
             cartButton.addEventListener('click', () => { if (currentView !== 'cart') switchView('cart'); });
             trackOrderBtn.addEventListener('click', () => switchView('tracking'));
-            brandLogo.addEventListener('click', () => { historyStack = ['catalog']; searchInput.value = ''; renderCatalog(); switchView('catalog'); });
+            brandLogo.addEventListener('click', () => { historyStack = ['catalog']; searchInput.value = ''; renderCategories(); renderCatalog(); switchView('catalog'); });
             document.getElementById('start-shopping-button').addEventListener('click', () => switchView('catalog'));
             document.getElementById('checkout-button').addEventListener('click', () => switchView('checkout'));
             document.getElementById('cart-view').addEventListener('click', (e) => { const target = e.target.closest('.quantity-change, .remove-item'); if (!target) return; const cartItemElement = target.closest('.cart-item'); const productId = parseInt(cartItemElement.dataset.productId); if (target.classList.contains('quantity-change')) { const change = parseInt(target.dataset.change); updateCartQuantity(productId, change); } else if (target.closest('.remove-item')) { if (confirm('Anda yakin ingin menghapus item ini?')) { updateCartQuantity(productId, -Infinity); } } });
@@ -337,7 +303,6 @@
             renderCatalog();
         }
         
-        // Loader yang kuat untuk memastikan semua skrip siap
         function onReady(callback) {
             let intervalId = window.setInterval(function() {
                 if (document.getElementsByTagName('body')[0] !== undefined && typeof lucide !== 'undefined') {
@@ -347,10 +312,7 @@
             }, 100);
         }
 
-        onReady(function() {
-            initializeApp();
-        });
-
+        onReady(initializeApp);
     </script>
 </body>
 </html>
