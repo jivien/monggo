@@ -125,7 +125,7 @@
         <div class="container">
             <button id="back-button" class="icon-button" style="display: none;"><i data-lucide="arrow-left"></i></button>
             <h1 id="brand-logo">Monggo</h1>
-            <div class="search-container"><i data-lucide="search" class="search-icon"></i><input type="text" id="search-input" placeholder="Cari di Katalog Monggo..."></div>
+            <div class="search-container"><i data-lucide="search" class="search-icon"></i><input type="text" id="search-input" placeholder="Cari"></div>
             <div id="header-nav">
                 <button id="track-order-btn" class="icon-button" title="Lacak Pesanan"><i data-lucide="truck"></i></button>
                 <button id="cart-button" class="icon-button" title="Keranjang"><i data-lucide="shopping-cart"></i><span id="cart-item-count" class="cart-badge" style="display: none;">0</span></button>
@@ -221,7 +221,6 @@
             let cart = []; let currentView = 'catalog'; let historyStack = ['catalog']; let lastOrderDetails = null; let appliedDiscount = 0;
             const availableVouchers = [
                 { code: 'MONGGOHEMAT', value: 25000, type: 'fixed' },
-                { code: 'DISKONBARU', value: 10000, type: 'fixed' }
             ];
             const modalOverlay = document.getElementById('modal-overlay'); const paymentModal = document.getElementById('payment-modal'); const closeModalBtn = document.getElementById('close-modal-btn'); const modalTotalAmount = document.getElementById('modal-total-amount'); const qrisCodeImg = document.getElementById('payment-qris-code');
             const views = { catalog: document.getElementById('catalog-view'), productDetail: document.getElementById('product-detail-view'), cart: document.getElementById('cart-view'), checkout: document.getElementById('checkout-view'), tracking: document.getElementById('tracking-view') };
@@ -309,7 +308,7 @@
                     orderSummaryText += `Saya sudah melakukan pembayaran. Mohon pesanan segera diproses. Terima kasih.`;
                     alert(`Pembayaran Berhasil!\n\nSimpan Nomor Resi Anda: ${lastOrderDetails.trackingNumber}\n\nAnda akan diarahkan ke WhatsApp untuk mengirim konfirmasi.`);
                 }
-                const whatsappUrl = `https://wa.me/6285179848497?text=${encodeURIComponent(orderSummaryText)}`;
+                const whatsappUrl = `https://wa.me/6281211862924?text=${encodeURIComponent(orderSummaryText)}`;
                 document.getElementById('checkout-form').reset(); cart = []; appliedDiscount = 0; updateCartCount();
                 window.location.href = whatsappUrl;
                 historyStack = ['catalog']; switchView('catalog');
